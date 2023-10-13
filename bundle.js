@@ -1,1 +1,1 @@
-console.log("Hello World!");
+(()=>{"use strict";const s=new class{constructor(s){this.name=s}}("hello world");console.log(s);const o=new class{constructor(s,o,t,e){this.title=s,this.description=o,this.dueDate=t,this.priority=e}}("Task","Hello World","never","high");console.log(o)})();
