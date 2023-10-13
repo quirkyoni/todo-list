@@ -1,1 +1,8 @@
-console.log("Hello World!")
+import { Project, Task } from './classes'
+
+
+const testProject = new Project("hello world")
+console.log(testProject)
+
+const testTask = new Task("Task", "Hello World", "never", "high")
+console.log(testTask)
