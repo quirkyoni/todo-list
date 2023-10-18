@@ -1,11 +1,11 @@
 import { Task } from "./classes";
 
-const taskTitle = document.querySelector(".task-title")
-const taskDescription = document.querySelector(".task-description")
-const taskDueDate = document.querySelector(".task-due-date")
-const taskPriority = document.querySelector(".task-priority")
+const taskTitle = document.querySelector(".form-task-title")
+const taskDescription = document.querySelector(".form-task-description")
+const taskDueDate = document.querySelector(".form-task-due-date")
+const taskPriority = document.querySelector(".form-task-priority")
 
-const tasks = []
+let tasks = []
 
 const createTask = () => {
     const newTask = new Task(taskTitle.value, taskDescription.value, taskDueDate.value, taskPriority.value)
@@ -13,4 +13,4 @@ const createTask = () => {
     console.log(tasks)
 }
 
-export { createTask }
+export { tasks, createTask }

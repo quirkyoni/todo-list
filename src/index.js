@@ -1,6 +1,8 @@
 import { Project, Task } from './classes'
-import { createProject } from './newProject'
-import { createTask } from './newTask'
+import { projects, createProject } from './newProject'
+import { renderProject } from './renderProject'
+import { tasks, createTask } from './newTask'
+import { renderTask } from './renderTask'
 
 const main = document.querySelector("main")
 const submitProject = document.querySelector(".submit-project")
@@ -15,9 +17,13 @@ console.log(testTask)
 submitProject.addEventListener("click", (e) => {
     e.preventDefault()
     createProject()
+    renderProject()
 })
 
 submitTask.addEventListener("click", (e) => {
     e.preventDefault()
     createTask()
+    renderTask()
 })
+
+export { main }

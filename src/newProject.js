@@ -1,8 +1,8 @@
 import { Project } from './classes'
 
-const projectTitle = document.querySelector(".project-title")
+const projectTitle = document.querySelector(".form-project-title")
 
-const projects = []
+let projects = []
 
 const createProject = () => {
     const newProject = new Project(projectTitle.value)
@@ -10,4 +10,4 @@ const createProject = () => {
     console.log(projects)
 }
 
-export { createProject }
+export { projects, createProject }
