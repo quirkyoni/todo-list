@@ -29,6 +29,16 @@ const renderTask = () => {
         taskPriority.textContent = element.priority
         task.appendChild(taskPriority)
 
+        const editButton = document.createElement("button")
+        editButton.className = "edit-button"
+        editButton.textContent = "Edit"
+        task.appendChild(editButton)
+
+        const deleteButton = document.createElement("button")
+        deleteButton.className = "delete-button"
+        deleteButton.textContent = "Delete"
+        task.appendChild(deleteButton)
+
         main.appendChild(task)
     })
 
