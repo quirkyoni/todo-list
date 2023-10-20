@@ -1,3 +1,4 @@
+import './style.css';
 import { Project, Task } from './classes'
 import { projects, createProject } from './newProject'
 import { renderProject } from './renderProject'

@@ -2,3 +2,24 @@ body {
     margin: 0;
     padding: 0;
 }
+
+main {
+    display: grid;
+    grid-template-areas:
+        'header header'
+        'project task';
+    grid-template-rows: auto auto;
+    grid-template-columns: 30% auto;
+}
+
+header {
+    grid-area: header;
+}
+
+.project-section {
+    grid-area: project;
+}
+
+.task-section {
+    grid-area: task;
+}
