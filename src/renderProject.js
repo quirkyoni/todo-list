@@ -2,12 +2,16 @@ import { Project } from "./classes";
 import { projects, createProject } from "./newProject";
 import { main } from ".";
 
+const projectSection = document.createElement("section")
+projectSection.className = "project-section"
 
 const renderProject = () => {
 
     projects.forEach((element, index) => {
+
         const project = document.createElement("div")
         project.className = "project"
+        project.setAttribute('data-id', `${index}`)
 
         const projectTitle = document.createElement("div")
         projectTitle.className = "project-title"
@@ -24,7 +28,8 @@ const renderProject = () => {
         deleteButton.textContent = "Delete"
         project.appendChild(deleteButton)
 
-        main.appendChild(project)
+        projectSection.appendChild(project)
+        main.appendChild(projectSection)
     })
 
 }

@@ -2,12 +2,16 @@ import { Task } from "./classes";
 import { tasks, createTask } from "./newTask";
 import { main } from ".";
 
+const taskSection = document.createElement("section")
+taskSection.className = "task-section"
 
 const renderTask = () => {
 
     tasks.forEach((element, index) => {
+
         const task = document.createElement("div")
         task.className = "task"
+        task.setAttribute('data-id', `${index}`)
 
         const taskTitle = document.createElement("div")
         taskTitle.className = "task-title"
@@ -39,9 +43,10 @@ const renderTask = () => {
         deleteButton.textContent = "Delete"
         task.appendChild(deleteButton)
 
-        main.appendChild(task)
+        taskSection.appendChild(task)
+        main.appendChild(taskSection)
     })
 
 }
 
-export { renderTask }
+export { taskSection, renderTask }

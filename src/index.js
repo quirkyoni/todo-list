@@ -3,7 +3,7 @@ import { Project, Task } from './classes'
 import { projects, createProject } from './newProject'
 import { renderProject } from './renderProject'
 import { tasks, createTask } from './newTask'
-import { renderTask } from './renderTask'
+import { taskSection, renderTask } from './renderTask'
 
 const main = document.querySelector("main")
 const submitProject = document.querySelector(".submit-project")
