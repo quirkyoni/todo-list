@@ -34,4 +34,4 @@ const renderProject = () => {
 
 }
 
-export { renderProject }
+export { projectSection, renderProject }
