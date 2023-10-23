@@ -1,13 +1,16 @@
 import './style.css';
 import { Project, Task } from './classes'
 import { projects, createProject } from './newProject'
-import { projectSection, renderProject } from './renderProject'
+import { renderProject } from './renderProject'
 import { tasks, createTask } from './newTask'
-import { taskSection, renderTask } from './renderTask'
+import { renderTask } from './renderTask'
 
 const main = document.querySelector("main")
+const todo = document.querySelector(".to-do")
 const submitProject = document.querySelector(".submit-project")
 const submitTask = document.querySelector(".submit-task")
+const projectSection = document.querySelector(".project-section")
+const taskSection = document.querySelector(".task-section")
 
 submitProject.addEventListener("click", (e) => {
     e.preventDefault()
@@ -23,4 +26,4 @@ submitTask.addEventListener("click", (e) => {
     renderTask()
 })
 
-export { main }
+export { main, todo, projectSection, taskSection }

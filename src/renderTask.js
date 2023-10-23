@@ -1,9 +1,6 @@
 import { Task } from "./classes";
 import { tasks, createTask } from "./newTask";
-import { main } from ".";
-
-const taskSection = document.createElement("section")
-taskSection.className = "task-section"
+import { main, todo, taskSection } from ".";
 
 const renderTask = () => {
 
@@ -44,9 +41,9 @@ const renderTask = () => {
         task.appendChild(deleteButton)
 
         taskSection.appendChild(task)
-        main.appendChild(taskSection)
+        todo.appendChild(taskSection)
     })
 
 }
 
-export { taskSection, renderTask }
+export { renderTask }

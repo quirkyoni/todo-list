@@ -1,25 +1,35 @@
 body {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
-main {
+.forms {
     display: grid;
-    grid-template-areas:
-        'header header'
-        'project task';
-    grid-template-rows: auto auto;
-    grid-template-columns: 30% auto;
+    grid-template-areas: 
+    "project-form task-form";
+    grid-template-columns: 1fr 3fr;
 }
 
-header {
-    grid-area: header;
+.project-form {
+    background-color: aqua;
+}
+
+.task-form {
+    background-color: lawngreen;
+}
+
+.to-do {
+    display: grid;
+    grid-template-areas: 
+    "projects tasks";
+    grid-template-columns: 1fr 3fr;
 }
 
 .project-section {
-    grid-area: project;
+    background-color: lightblue;
 }
 
 .task-section {
-    grid-area: task;
+    background-color: lightgreen;
 }

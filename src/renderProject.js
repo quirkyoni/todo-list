@@ -1,9 +1,6 @@
 import { Project } from "./classes";
 import { projects, createProject } from "./newProject";
-import { main } from ".";
-
-const projectSection = document.createElement("section")
-projectSection.className = "project-section"
+import { main, todo, projectSection } from ".";
 
 const renderProject = () => {
 
@@ -29,9 +26,9 @@ const renderProject = () => {
         project.appendChild(deleteButton)
 
         projectSection.appendChild(project)
-        main.appendChild(projectSection)
+        todo.appendChild(projectSection)
     })
 
 }
 
-export { projectSection, renderProject }
+export { renderProject }
