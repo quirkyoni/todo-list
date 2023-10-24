@@ -41,7 +41,6 @@ const renderTask = () => {
         task.appendChild(deleteButton)
 
         taskSection.appendChild(task)
-        todo.appendChild(taskSection)
     })
 
 }

@@ -26,7 +26,6 @@ const renderProject = () => {
         project.appendChild(deleteButton)
 
         projectSection.appendChild(project)
-        todo.appendChild(projectSection)
     })
 
 }
