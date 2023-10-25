@@ -5,7 +5,10 @@ const projectTitle = document.querySelector(".form-project-title")
 let projects = []
 
 const createProject = () => {
-    const newProject = new Project(projectTitle.value)
+    projects.forEach(project => {
+        project.active = 'false'
+    })
+    const newProject = new Project(projectTitle.value, 'true')
     projects.push(newProject)
     console.log(projects)
 }

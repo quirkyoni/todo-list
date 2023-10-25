@@ -10,7 +10,7 @@ const renderProject = () => {
         project.className = "project"
         project.setAttribute('data-id', `${index}`)
 
-        const projectTitle = document.createElement("div")
+        const projectTitle = document.createElement("h3")
         projectTitle.className = "project-title"
         projectTitle.textContent = element.title
         project.appendChild(projectTitle)

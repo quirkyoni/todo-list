@@ -26,4 +26,14 @@ submitTask.addEventListener("click", (e) => {
     renderTask()
 })
 
+let projectIndex;
+
+projectSection.addEventListener("click", (e) => {
+    let selectProject = e.target
+    console.log(selectProject)
+    if (selectProject.classList.contains("project")) {
+        projectIndex = selectProject.getAttribute("data-id")
+    }
+})
+
 export { main, todo, projectSection, taskSection }

@@ -1,3 +1,4 @@
+import { projects } from "./newProject";
 import { Task } from "./classes";
 
 const taskTitle = document.querySelector(".form-task-title")
@@ -8,7 +9,14 @@ const taskPriority = document.querySelector(".form-task-priority")
 let tasks = []
 
 const createTask = () => {
-    const newTask = new Task(taskTitle.value, taskDescription.value, taskDueDate.value, taskPriority.value)
+    let activeProject;
+    projects.filter((project, index) => {
+        if (project.active == 'true') {
+            activeProject = index;
+            console.log(activeProject)
+        }
+    })
+    const newTask = new Task(taskTitle.value, taskDescription.value, taskDueDate.value, taskPriority.value, activeProject)
     tasks.push(newTask)
     console.log(tasks)
 }
