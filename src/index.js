@@ -12,6 +12,8 @@ const submitTask = document.querySelector(".submit-task")
 const projectSection = document.querySelector(".project-section")
 const taskSection = document.querySelector(".task-section")
 
+let projectDataId;
+
 submitProject.addEventListener("click", (e) => {
     e.preventDefault()
     createProject()
@@ -26,14 +28,24 @@ submitTask.addEventListener("click", (e) => {
     renderTask()
 })
 
-let projectIndex;
-
 projectSection.addEventListener("click", (e) => {
-    let selectProject = e.target
-    console.log(selectProject)
-    if (selectProject.classList.contains("project")) {
-        projectIndex = selectProject.getAttribute("data-id")
+    taskSection.textContent = ""
+    let targetProject = e.target
+    projectDataId = targetProject.getAttribute("data-id")
+    if (targetProject.className === "project") {
+        projects.forEach((project, index) => {
+            project.active = 'false'
+        })
+        projects[projectDataId].active = 'true'
+        console.log(projects)
+        tasks.filter((task, index) => {
+            if (projectDataId == task.projectId) {
+                console.log(task)
+                console.log('hello world')
+                
+            }
+        })
     }
 })
 
-export { main, todo, projectSection, taskSection }
+export { main, todo, projectSection, taskSection, projectDataId }
