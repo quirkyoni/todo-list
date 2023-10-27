@@ -3,7 +3,7 @@ import { Project, Task } from './classes'
 import { projects, createProject } from './newProject'
 import { renderProject } from './renderProject'
 import { tasks, createTask } from './newTask'
-import { renderTask } from './renderTask'
+import { renderAllTasks, renderIndividualTasks } from './renderTask'
 
 const main = document.querySelector("main")
 const todo = document.querySelector(".to-do")
@@ -25,7 +25,7 @@ submitTask.addEventListener("click", (e) => {
     e.preventDefault()
     createTask()
     taskSection.textContent = ""
-    renderTask()
+    renderAllTasks()
 })
 
 projectSection.addEventListener("click", (e) => {
@@ -38,14 +38,9 @@ projectSection.addEventListener("click", (e) => {
         })
         projects[projectDataId].active = 'true'
         console.log(projects)
-        tasks.filter((task, index) => {
-            if (projectDataId == task.projectId) {
-                console.log(task)
-                console.log('hello world')
-                
-            }
-        })
+        renderIndividualTasks()
     }
+
 })
 
 export { main, todo, projectSection, taskSection, projectDataId }

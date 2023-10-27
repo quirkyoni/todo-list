@@ -1,48 +1,93 @@
 import { Task } from "./classes";
 import { tasks, createTask } from "./newTask";
-import { main, todo, taskSection } from ".";
+import { projects } from "./newProject";
+import { main, todo, taskSection, projectDataId } from ".";
 
-const renderTask = () => {
+const renderAllTasks = () => {
 
-    tasks.forEach((element, index) => {
+    tasks.forEach((task, index) => {
 
-        const task = document.createElement("div")
-        task.className = "task"
-        task.setAttribute('data-id', `${index}`)
+        const newTask = document.createElement("div")
+        newTask.className = "task"
+        newTask.setAttribute('data-id', `${index}`)
 
-        const taskTitle = document.createElement("div")
-        taskTitle.className = "task-title"
-        taskTitle.textContent = element.title
-        task.appendChild(taskTitle)
+        const newTaskTitle = document.createElement("div")
+        newTaskTitle.className = "task-title"
+        newTaskTitle.textContent = task.title
+        newTask.appendChild(newTaskTitle)
 
-        const taskDescription = document.createElement("div")
-        taskDescription.className = "task-description"
-        taskDescription.textContent = element.description
-        task.appendChild(taskDescription)
+        const newTaskDescription = document.createElement("div")
+        newTaskDescription.className = "task-description"
+        newTaskDescription.textContent = task.description
+        newTask.appendChild(newTaskDescription)
 
-        const taskDueDate = document.createElement("div")
-        taskDueDate.className = "task-due-date"
-        taskDueDate.textContent = element.dueDate
-        task.appendChild(taskDueDate)
+        const newTaskDueDate = document.createElement("div")
+        newTaskDueDate.className = "task-due-date"
+        newTaskDueDate.textContent = task.dueDate
+        newTask.appendChild(newTaskDueDate)
 
-        const taskPriority = document.createElement("div")
-        taskPriority.className = "task-priority"
-        taskPriority.textContent = element.priority
-        task.appendChild(taskPriority)
+        const newTaskPriority = document.createElement("div")
+        newTaskPriority.className = "task-priority"
+        newTaskPriority.textContent = task.priority
+        newTask.appendChild(newTaskPriority)
 
         const editButton = document.createElement("button")
         editButton.className = "edit-button"
         editButton.textContent = "Edit"
-        task.appendChild(editButton)
+        newTask.appendChild(editButton)
 
         const deleteButton = document.createElement("button")
         deleteButton.className = "delete-button"
         deleteButton.textContent = "Delete"
-        task.appendChild(deleteButton)
+        newTask.appendChild(deleteButton)
 
-        taskSection.appendChild(task)
+        taskSection.appendChild(newTask)
     })
 
 }
 
-export { renderTask }
+const renderIndividualTasks = () => {
+
+    tasks.filter((task, index) => {
+        if (task.projectId == projectDataId) {
+            console.log(task)
+            const newTask = document.createElement("div")
+            newTask.className = "task"
+            newTask.setAttribute('data-id', `${index}`)
+
+            const newTaskTitle = document.createElement("div")
+            newTaskTitle.className = "task-title"
+            newTaskTitle.textContent = task.title
+            newTask.appendChild(newTaskTitle)
+
+            const newTaskDescription = document.createElement("div")
+            newTaskDescription.className = "task-description"
+            newTaskDescription.textContent = task.description
+            newTask.appendChild(newTaskDescription)
+
+            const newTaskDueDate = document.createElement("div")
+            newTaskDueDate.className = "task-due-date"
+            newTaskDueDate.textContent = task.dueDate
+            newTask.appendChild(newTaskDueDate)
+
+            const newTaskPriority = document.createElement("div")
+            newTaskPriority.className = "task-priority"
+            newTaskPriority.textContent = task.priority
+            newTask.appendChild(newTaskPriority)
+
+            const editButton = document.createElement("button")
+            editButton.className = "edit-button"
+            editButton.textContent = "Edit"
+            newTask.appendChild(editButton)
+
+            const deleteButton = document.createElement("button")
+            deleteButton.className = "delete-button"
+            deleteButton.textContent = "Delete"
+            newTask.appendChild(deleteButton)
+
+            taskSection.appendChild(newTask)
+        }
+    })
+}
+
+export { renderAllTasks, renderIndividualTasks }

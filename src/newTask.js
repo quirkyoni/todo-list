@@ -13,12 +13,10 @@ const createTask = () => {
     projects.filter((project, index) => {
         if (project.active == 'true') {
             activeProject = index;
-            console.log(activeProject)
         }
     })
     const newTask = new Task(taskTitle.value, taskDescription.value, taskDueDate.value, taskPriority.value, activeProject)
     tasks.push(newTask)
-    console.log(tasks)
 }
 
 export { tasks, createTask }
