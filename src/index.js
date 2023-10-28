@@ -3,7 +3,7 @@ import { Project, Task } from './classes'
 import { projects, createProject } from './newProject'
 import { renderProject } from './renderProject'
 import { tasks, createTask } from './newTask'
-import { renderAllTasks, renderIndividualTasks } from './renderTask'
+import { renderAllTasks, renderTasks, renderIndividualTasks } from './renderTask'
 
 const main = document.querySelector("main")
 const todo = document.querySelector(".to-do")
@@ -25,7 +25,7 @@ submitTask.addEventListener("click", (e) => {
     e.preventDefault()
     createTask()
     taskSection.textContent = ""
-    renderAllTasks()
+    renderTasks()
 })
 
 projectSection.addEventListener("click", (e) => {
