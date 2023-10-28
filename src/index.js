@@ -1,7 +1,7 @@
 import './style.css';
 import { Project, Task } from './classes'
 import { projects, createProject } from './newProject'
-import { renderProject } from './renderProject'
+import { renderAllProjects } from './renderProject'
 import { tasks, createTask } from './newTask'
 import { renderAllTasks, renderTasks, renderIndividualTasks } from './renderTask'
 
@@ -18,7 +18,8 @@ submitProject.addEventListener("click", (e) => {
     e.preventDefault()
     createProject()
     projectSection.textContent = ""
-    renderProject()
+    taskSection.textContent = ""
+    renderAllProjects()
 })
 
 submitTask.addEventListener("click", (e) => {
