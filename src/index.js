@@ -44,4 +44,9 @@ projectSection.addEventListener("click", (e) => {
 
 })
 
+taskSection.addEventListener("click", (e) => {
+    let targetTask = e.target
+    console.log(e.target)
+})
+
 export { main, todo, projectSection, taskSection, projectDataId }
