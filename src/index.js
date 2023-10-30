@@ -4,6 +4,7 @@ import { projects, createProject } from './newProject'
 import { renderAllProjects } from './renderProject'
 import { tasks, createTask } from './newTask'
 import { renderAllTasks, renderTasks, renderIndividualTasks } from './renderTask'
+import { deleteTask } from './deleteTask';
 
 const main = document.querySelector("main")
 const todo = document.querySelector(".to-do")
@@ -13,6 +14,7 @@ const projectSection = document.querySelector(".project-section")
 const taskSection = document.querySelector(".task-section")
 
 let projectDataId;
+let taskId;
 
 submitProject.addEventListener("click", (e) => {
     e.preventDefault()
@@ -46,7 +48,14 @@ projectSection.addEventListener("click", (e) => {
 
 taskSection.addEventListener("click", (e) => {
     let targetTask = e.target
-    console.log(e.target)
+    taskId = targetTask.parentElement.getAttribute("data-id")
+    if (targetTask.className == "delete-button") {
+        deleteTask()
+        targetTask.parentElement.remove()
+        console.log(tasks)
+    } else if (targetTask.className == "edit-button") {
+        console.log(targetTask)
+    }
 })
 
-export { main, todo, projectSection, taskSection, projectDataId }
+export { main, todo, projectSection, taskSection, projectDataId, taskId }

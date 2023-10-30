@@ -14,11 +14,6 @@ const renderAllProjects = () => {
         newProjectTitle.textContent = project.title
         newProject.appendChild(newProjectTitle)
 
-        const editButton = document.createElement("button")
-        editButton.className = "edit-button"
-        editButton.textContent = "Edit"
-        newProject.appendChild(editButton)
-
         const deleteButton = document.createElement("button")
         deleteButton.className = "delete-button"
         deleteButton.textContent = "Delete"

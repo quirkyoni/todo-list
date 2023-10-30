@@ -33,3 +33,8 @@ body {
 .task-section {
     background-color: lightgreen;
 }
+
+/* Edit Task Form */
+.edit-task-form {
+    display: none;
+}
