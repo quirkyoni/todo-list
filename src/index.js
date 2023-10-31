@@ -41,25 +41,28 @@ projectSection.addEventListener("click", (e) => {
         projects[projectDataId].active = 'true'
         renderIndividualTasks()
         console.log(projects)
-    } else if (targetProject.className === "delete-button") {
-        console.log(targetProject.parentElement.getAttribute("data-id"))
+        console.log(tasks)
+    }
+    if (targetProject.className === "delete-button") {
         let targetProjectToDelete = targetProject.parentElement.getAttribute("data-id")
+        let tasksToDelete = []
+        tasks.filter((task, index) => {
+            if (targetProjectToDelete == task.projectId) {
+                tasksToDelete.push(index)
+            }
+        })
+        for (let i = tasksToDelete.length - 1; i >= 0; i--) {
+            tasks.splice(tasksToDelete[i], 1)
+        }
         projects.filter((project, index) => {
             if (index == targetProjectToDelete) {
-                tasks.forEach((task, index) => {
-                    if (index == projectDataId) {
-                        tasks.splice(projectDataId, 1)
-                        console.log(tasks)
-                    }
-                })
                 projects.splice(index, 1)
                 targetProject.parentElement.remove()
             }
         })
-        projectSection.textContent = ""
         taskSection.textContent = ""
-        renderAllProjects()
         console.log(projects)
+        console.log(tasks)
     }
 
 })
