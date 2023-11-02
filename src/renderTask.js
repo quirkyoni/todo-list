@@ -49,7 +49,7 @@ const renderTasks = () => {
     projects.filter((project, projectIndex) => {
         if (project.active === "true") {
             tasks.filter((task, taskIndex) => {
-                if (task.projectId == projectIndex) {
+                if (task.projectId == project.title) {
                     console.log(tasks)
                     const newTask = document.createElement("div")
                     newTask.className = "task"

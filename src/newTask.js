@@ -12,7 +12,7 @@ const createTask = () => {
     let activeProject;
     projects.filter((project, index) => {
         if (project.active == 'true') {
-            activeProject = index;
+            activeProject = project.title;
         }
     })
     const newTask = new Task(taskTitle.value, taskDescription.value, taskDueDate.value, taskPriority.value, activeProject)
