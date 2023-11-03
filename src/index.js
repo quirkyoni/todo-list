@@ -4,6 +4,7 @@ import { projects, createProject } from './newProject'
 import { renderAllProjects } from './renderProject'
 import { tasks, createTask } from './newTask'
 import { renderAllTasks, renderTasks, renderIndividualTasks } from './renderTask'
+import { submitEditTask } from './editTask';
 
 const main = document.querySelector("main")
 const todo = document.querySelector(".to-do")
@@ -84,7 +85,8 @@ taskSection.addEventListener("click", (e) => {
         console.log(tasks)
     } else if (targetTask.className == "edit-button") {
         editTask.style.display = "block"
-        console.log("hello")
+        submitEditTask()
+        
     }
 })
 
