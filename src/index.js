@@ -10,7 +10,14 @@ const main = document.querySelector("main")
 const todo = document.querySelector(".to-do")
 const submitProject = document.querySelector(".submit-project")
 const submitTask = document.querySelector(".submit-task")
+
 const editTask = document.querySelector(".edit-task")
+const editFormTaskTitle = document.querySelector(".edit-form-task-title")
+const editFormTaskDescription = document.querySelector(".edit-form-task-description")
+const editFormTaskDueDate = document.querySelector(".edit-form-task-due-date")
+const editFormTaskPriority = document.querySelector(".edit-form-task-priority")
+const submitEdit = document.querySelector(".submit-edit")
+
 const projectSection = document.querySelector(".project-section")
 const taskSection = document.querySelector(".task-section")
 
@@ -82,11 +89,14 @@ taskSection.addEventListener("click", (e) => {
             }
         })
         targetTask.parentElement.remove()
-        console.log(tasks)
     } else if (targetTask.className == "edit-button") {
         editTask.style.display = "block"
+        editFormTaskTitle.value = tasks[taskId].title
+        editFormTaskDescription.value = tasks[taskId].description
+        editFormTaskDueDate.value = tasks[taskId].dueDate
+        editFormTaskPriority.value = tasks[taskId].priority
         submitEditTask()
-        
+        console.log(tasks)
     }
 })
 
