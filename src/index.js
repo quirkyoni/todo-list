@@ -15,7 +15,7 @@ const editTask = document.querySelector(".edit-task")
 const editFormTaskTitle = document.querySelector(".edit-form-task-title")
 const editFormTaskDescription = document.querySelector(".edit-form-task-description")
 const editFormTaskDueDate = document.querySelector(".edit-form-task-due-date")
-const editFormTaskPriority = document.querySelector(".edit-form-task-priority")
+const editFormTaskPriority = document.querySelectorAll(".edit-form-task-priority")
 const submitEdit = document.querySelector(".submit-edit")
 
 const projectSection = document.querySelector(".project-section")
@@ -94,9 +94,8 @@ taskSection.addEventListener("click", (e) => {
         editFormTaskTitle.value = tasks[taskId].title
         editFormTaskDescription.value = tasks[taskId].description
         editFormTaskDueDate.value = tasks[taskId].dueDate
-        editFormTaskPriority.value = tasks[taskId].priority
+        // editFormTaskPriority.value = tasks[taskId].priority
         submitEditTask()
-        console.log(tasks)
     }
 })
 
