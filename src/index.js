@@ -9,6 +9,10 @@ import { submitEditTask } from './editTask';
 const main = document.querySelector("main")
 const todo = document.querySelector(".to-do")
 const submitProject = document.querySelector(".submit-project")
+const taskPriority = document.querySelectorAll(".form-task-priority")
+const lowPriority = document.querySelector(".form-task-priority.low")
+const mediumPriority = document.querySelector(".form-task-priority.medium")
+const highPriority = document.querySelector(".form-task-priority.high")
 const submitTask = document.querySelector(".submit-task")
 
 const editTask = document.querySelector(".edit-task")
@@ -16,6 +20,9 @@ const editFormTaskTitle = document.querySelector(".edit-form-task-title")
 const editFormTaskDescription = document.querySelector(".edit-form-task-description")
 const editFormTaskDueDate = document.querySelector(".edit-form-task-due-date")
 const editFormTaskPriority = document.querySelectorAll(".edit-form-task-priority")
+const editFormTaskPriorityLow = document.querySelector(".edit-form-task-priority.low")
+const editFormTaskPriorityMedium = document.querySelector(".edit-form-task-priority.medium")
+const editFormTaskPriorityHigh = document.querySelector(".edit-form-task-priority.high")
 const submitEdit = document.querySelector(".submit-edit")
 
 const projectSection = document.querySelector(".project-section")
@@ -95,6 +102,16 @@ taskSection.addEventListener("click", (e) => {
         editFormTaskDescription.value = tasks[taskId].description
         editFormTaskDueDate.value = tasks[taskId].dueDate
         // editFormTaskPriority.value = tasks[taskId].priority
+        if (tasks[taskId].priority == "Low") {
+            console.log(lowPriority.value)
+            editFormTaskPriorityLow.checked = true
+        } else if (tasks[taskId].priority == "Medium") {
+            console.log(mediumPriority.value)
+            editFormTaskPriorityMedium.checked = true
+        } else if (tasks[taskId].priority == "High") {
+            console.log(highPriority.value)
+            editFormTaskPriorityHigh.checked = true
+        }
         submitEditTask()
     }
 })
