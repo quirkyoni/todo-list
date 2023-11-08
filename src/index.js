@@ -34,14 +34,17 @@ let taskId;
 submitProject.addEventListener("click", (e) => {
     e.preventDefault()
     createProject()
+    localStorage.setItem("projects", JSON.stringify(projects))
     projectSection.textContent = ""
     taskSection.textContent = ""
     renderAllProjects()
+
 })
 
 submitTask.addEventListener("click", (e) => {
     e.preventDefault()
     createTask()
+    localStorage.setItem("tasks", JSON.stringify(tasks))
     taskSection.textContent = ""
     renderTasks()
 })
@@ -116,6 +119,13 @@ taskSection.addEventListener("click", (e) => {
     }
 })
 
-
+window.addEventListener("load", (e) => {
+    
+    projects = JSON.parse(localStorage.getItem('projects'))
+    renderAllProjects()
+    tasks = JSON.parse(localStorage.getItem('tasks'))
+    renderTasks()
+    
+})
 
 export { main, todo, projectSection, taskSection, projectDataId, taskId }
