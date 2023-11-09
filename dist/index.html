@@ -21,18 +21,20 @@
                 <input type="submit" value="Submit" class="submit-project">
             </form>
             <form action="" class="task-form">
-                <h2>Add Task</h2>
+                <div class="task-title-wrapper">
+                    <h2>Add Task</h2>
+                    <button class="add-new-task">+</button>
+                </div>
                 <label for="">Title</label>
                 <input type="text" class="form-task-title">
                 <label for="">Description</label>
                 <input type="text" class="form-task-description">
                 <label for="">Due Date</label>
                 <input type="text" class="form-task-due-date">
-                <!-- <label for="">Priority</label>
-                <input type="text" class="form-task-priority"> -->
                 <input type="radio" id="low-priority" name="priority" value="Low" class="form-task-priority low">
                 <label for="low">Low</label><br>
-                <input type="radio" id="medium-priority" name="priority" value="Medium" class="form-task-priority medium">
+                <input type="radio" id="medium-priority" name="priority" value="Medium"
+                    class="form-task-priority medium">
                 <label for="medium">Medium</label><br>
                 <input type="radio" id="high-priority" name="priority" value="High" class="form-task-priority high">
                 <label for="high">High</label>
@@ -48,13 +50,13 @@
                 <input type="text" class="edit-form-task-description">
                 <label for="">Due Date</label>
                 <input type="text" class="edit-form-task-due-date">
-                <!-- <label for="">Priority</label>
-                <input type="text" class="edit-form-task-priority"> -->
                 <input type="radio" id="low-priority" name="priority" value="Low" class="edit-form-task-priority low">
                 <label for="low">Low</label><br>
-                <input type="radio" id="medium-priority" name="priority" value="Medium" class="edit-form-task-priority medium">
+                <input type="radio" id="medium-priority" name="priority" value="Medium"
+                    class="edit-form-task-priority medium">
                 <label for="medium">Medium</label><br>
-                <input type="radio" id="high-priority" name="priority" value="High" class="edit-form-task-priority high">
+                <input type="radio" id="high-priority" name="priority" value="High"
+                    class="edit-form-task-priority high">
                 <label for="high">High</label>
                 <input type="submit" value="Submit" class="submit-edit">
             </form>
