@@ -9,6 +9,9 @@ import { submitEditTask } from './editTask';
 const main = document.querySelector("main")
 const todo = document.querySelector(".to-do")
 const submitProject = document.querySelector(".submit-project")
+const addTaskButton = document.querySelector(".add-task-button")
+const taskModal = document.querySelector(".task-modal")
+const closeTaskForm = document.querySelector(".close-task-form")
 const taskPriority = document.querySelectorAll(".form-task-priority")
 const lowPriority = document.querySelector(".form-task-priority.low")
 const mediumPriority = document.querySelector(".form-task-priority.medium")
@@ -16,6 +19,8 @@ const highPriority = document.querySelector(".form-task-priority.high")
 const submitTask = document.querySelector(".submit-task")
 
 const editTask = document.querySelector(".edit-task")
+const editTaskForm = document.querySelector(".edit-task-form")
+const closeEditTaskForm = document.querySelector(".close-edit-task-form")
 const editFormTaskTitle = document.querySelector(".edit-form-task-title")
 const editFormTaskDescription = document.querySelector(".edit-form-task-description")
 const editFormTaskDueDate = document.querySelector(".edit-form-task-due-date")
@@ -41,12 +46,29 @@ submitProject.addEventListener("click", (e) => {
 
 })
 
+addTaskButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    taskModal.style.display = "block"
+})
+
+closeTaskForm.addEventListener("click", (e) => {
+    e.preventDefault()
+    taskModal.style.display = "none"
+})
+
+closeEditTaskForm.addEventListener("click", (e) => {
+    e.preventDefault()
+    editTask.style.display = "none"
+})
+
 submitTask.addEventListener("click", (e) => {
     e.preventDefault()
+    taskModal.style.display = "none"
     createTask()
     localStorage.setItem("tasks", JSON.stringify(tasks))
     taskSection.textContent = ""
     renderTasks()
+
 })
 
 projectSection.addEventListener("click", (e) => {
@@ -120,12 +142,12 @@ taskSection.addEventListener("click", (e) => {
 })
 
 window.addEventListener("load", (e) => {
-    
+
     projects = JSON.parse(localStorage.getItem('projects'))
     renderAllProjects()
     tasks = JSON.parse(localStorage.getItem('tasks'))
     renderTasks()
-    
+
 })
 
 export { main, todo, projectSection, taskSection, projectDataId, taskId }
