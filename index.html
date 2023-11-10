@@ -16,33 +16,43 @@
         <section class="forms">
             <form action="" class="project-form">
                 <h2>Add Project</h2>
-                <label for="">Title</label>
-                <input type="text" class="form-project-title">
-                <input type="submit" value="Submit" class="submit-project">
+                <div class="submit-project-wrapper">
+                    <label for="">Title</label>
+                    <input type="text" class="form-project-title">
+                    <input type="submit" value="+" class="submit-project">
+                </div>
             </form>
             <form action="" class="task-form">
                 <div class="task-title-wrapper">
                     <h2>Add Task</h2>
-                    <button class="add-new-task">+</button>
+                    <button class="add-task-button">+</button>
                 </div>
-                <label for="">Title</label>
-                <input type="text" class="form-task-title">
-                <label for="">Description</label>
-                <input type="text" class="form-task-description">
-                <label for="">Due Date</label>
-                <input type="text" class="form-task-due-date">
-                <input type="radio" id="low-priority" name="priority" value="Low" class="form-task-priority low">
-                <label for="low">Low</label><br>
-                <input type="radio" id="medium-priority" name="priority" value="Medium"
-                    class="form-task-priority medium">
-                <label for="medium">Medium</label><br>
-                <input type="radio" id="high-priority" name="priority" value="High" class="form-task-priority high">
-                <label for="high">High</label>
-                <input type="submit" value="Submit" class="submit-task">
+                <div class="task-modal">
+                    <div class="task-form-wrapper">
+                        <span class="close-task-form">&times;</span>
+                        <label for="">Title</label>
+                        <input type="text" class="form-task-title">
+                        <label for="">Description</label>
+                        <input type="text" class="form-task-description">
+                        <label for="">Due Date</label>
+                        <input type="text" class="form-task-due-date">
+                        <input type="radio" id="low-priority" name="priority" value="Low"
+                            class="form-task-priority low">
+                        <label for="low">Low</label><br>
+                        <input type="radio" id="medium-priority" name="priority" value="Medium"
+                            class="form-task-priority medium">
+                        <label for="medium">Medium</label><br>
+                        <input type="radio" id="high-priority" name="priority" value="High"
+                            class="form-task-priority high">
+                        <label for="high">High</label>
+                        <input type="submit" value="Submit" class="submit-task">
+                    </div>
+                </div>
             </form>
         </section>
         <section class="edit-task">
             <form action="" class="edit-task-form">
+                <span class="close-edit-task-form">&times;</span>
                 <h2>Edit Task</h2>
                 <label for="">Title</label>
                 <input type="text" class="edit-form-task-title">
