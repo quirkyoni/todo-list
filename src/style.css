@@ -48,10 +48,40 @@ h1 {
 
 .project-section {
     background-color: #EEEEEE;
+    height: calc(100vh - 173.83px);
+}
+
+.project {
+    margin: 1rem;
+    padding: 0.75rem;
+    transition: 0.3s;
+}
+
+.project:hover {
+    background-color: #00ADB5;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+h3.project-title {
+    margin: 0;
+    padding-bottom: 0.5rem;
 }
 
 .task-section {
     background-color: white;
+}
+
+.task {
+    margin: 1rem;
+    padding: 0.75rem;
+    transition: 0.3s;
+}
+
+.task:hover {
+    background-color: #EEEEEE;
+    transition: 0.3s;
+    border-radius: 10px;
 }
 
 .task-title-wrapper {
