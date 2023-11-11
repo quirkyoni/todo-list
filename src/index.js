@@ -126,7 +126,6 @@ taskSection.addEventListener("click", (e) => {
         editFormTaskTitle.value = tasks[taskId].title
         editFormTaskDescription.value = tasks[taskId].description
         editFormTaskDueDate.value = tasks[taskId].dueDate
-        // editFormTaskPriority.value = tasks[taskId].priority
         if (tasks[taskId].priority == "Low") {
             console.log(lowPriority.value)
             editFormTaskPriorityLow.checked = true
